@@ -5,10 +5,10 @@
 function calcular() {
 
     //entrada de dados
-    var preco = Number(document.getElementById(`preco`).value)
-    var categoria = Number(document.getElementById(`categoria`).value)
-    var situacao = document.getElementById(`situacao`).value
-    var classificao = ``
+    var price = Number(document.getElementById(`price`).value)
+    var categoryValue = Number(document.getElementById(`categories`).value)
+    var conditionValue = document.getElementById(`condition`).value
+    var classification = ``
     var valid
     var valid2
     var valid3
@@ -18,73 +18,73 @@ function calcular() {
 
     // inicio processamento
     // validação de entrada de dados
-    preco <= 0 ? valid = false : valid = true;
+    price <= 0 ? valid = false : valid = true;
 
 
 
-    if (categoria == 2 || situacao == `R`) {
-        preco += (preco * 5 / 100)
+    if (categoryValue == 2 || conditionValue == `R`) {
+        price += (price * 5 / 100)
 
     } else {
-        preco += (preco * 8 / 100)
+        price += (price * 8 / 100)
     }
 
 
 
-    switch (categoria) {
+    switch (categoryValue) {
         case 1:
-            if (preco <= 25) {
-                preco += (preco * 5) / 100
+            if (price <= 25) {
+                price += (price * 5) / 100
             } else {
-                preco += (preco * 12) / 100
+                price += (price * 12) / 100
             }
             break;
         case 2:
-            if (preco <= 25) {
-                preco += (preco * 8) / 100
+            if (price <= 25) {
+                price += (price * 8) / 100
             } else {
-                preco += (preco * 15) / 100
+                price += (price * 15) / 100
             }
 
             break;
         case 3:
-            if (preco <= 25) {
-                preco += (preco * 10) / 100
+            if (price <= 25) {
+                price += (price * 10) / 100
             } else {
-                preco += (preco * 18) / 100
+                price += (price * 18) / 100
             }
             break;
 
         default:
-            categoria = `invalida`
+            categoryValue = `invalida`
             break;
     }
 
 
 
-    switch (situacao) {
+    switch (conditionValue) {
         case `R`:
-            situacao = `precisa de refrigeração`
+            conditionValue = `precisa de refrigeração`
             break;
         case `N`:
-            situacao = `não precisa de refrigeração`
+            conditionValue = `não precisa de refrigeração`
             break;
         default:
-            situacao = `invalida`
+            conditionValue = `invalida`
             break;
     }
 
 
-    if (preco <= 50) {
-        classificao = `barato`
+    if (price <= 50) {
+        classification = `barato`
     } else {
-        if (preco >= 50 && preco < 120) {
-            classificao = `normal`
+        if (price >= 50 && price < 120) {
+            classification = `normal`
         } else {
-            if (preco >= 120) {
-                classificao = `caro`
+            if (price >= 120) {
+                classification = `caro`
             } else {
-                classificao = `Invalida`
+                classification = `Invalida`
             }
         }
     }
@@ -94,13 +94,13 @@ function calcular() {
 
     //saidas de dados
     if (valid == true) {
-        document.getElementById(`resultado`).innerHTML = `O novo preço do produto é ${preco.toFixed(2)} <br>
-                                                            A categoria é ${categoria}  <br>
-                                                            A situação do produto é que ele ${situacao} <br>
-                                                             A classificação do produto é ${classificao}`
+        document.getElementById(`results`).innerHTML = `O novo preço do produto é ${price.toFixed(2)} <br>
+                                                            A categoria é ${categoryValue}  <br>
+                                                            A situação do produto é que ele ${conditionValue} <br>
+                                                             A classificação do produto é ${classification}`
 
     } else {
-        document.getElementById(`resultado`).innerHTML = `Insira o preço corretamente`
+        document.getElementById(`results`).innerHTML = `Insira o preço corretamente`
         
     }
 

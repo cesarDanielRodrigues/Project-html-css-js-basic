@@ -21,11 +21,11 @@ body {
 
 
 
-#sit h1 {
+#situation h1 {
     margin-bottom: 3px;
 }
 
-#cat h1 {
+#category h1 {
     margin-bottom: 3px;
 }
 
@@ -76,7 +76,7 @@ button:hover {
     margin-top: -3px;
 }
 
-#resultado {
+#results {
     margin-top: 0;
     height: 155px;
     border: solid 2px black;
