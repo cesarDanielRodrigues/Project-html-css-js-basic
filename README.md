@@ -1,2 +1,2 @@
 # Project-html-css-js-basic
-projeto criado para alterar o valor de um produto conforme as condiço
+project created to change the value of a product according to conditions
